@@ -31,6 +31,7 @@ const MyBitsCard = ({ data }) => {
                 <td>{row.deadline}</td>
                 <td>{row.email}</td>
                 <td>{row.email2}</td>
+                <td> <button className="btn btn-secondary mx-auto">Complete Button</button></td>
 
               </tr>))
             }
@@ -44,9 +45,7 @@ const MyBitsCard = ({ data }) => {
             </tbody>
         </table>
       </div>
-     <div className="items-center text-center mt-10">
-     <button className="btn btn-secondary mx-auto">Complete Button</button>
-     </div>
+    
     </div>
   );
 };

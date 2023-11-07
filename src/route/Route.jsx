@@ -11,6 +11,7 @@ import Graphics from "../component/graphics/Graphics";
 import JobDetails from "../pages/home/jobCart/JobDetails";
 import MyBits from "../pages/MyBits";
 import Update from "../pages/home/jobCart/Update";
+import Request from "../pages/request/Request";
 
 const router = createBrowserRouter([
     {
@@ -42,7 +43,12 @@ const router = createBrowserRouter([
                 element:<MyBits></MyBits>,
                 loader : () => fetch('http://localhost:5000/bit'),
             },
-
+            {
+                path:'/bitRequest',
+                element: <Request></Request>,
+                loader : () => fetch('http://localhost:5000/bit'),
+            },
+            
             {
                 path: '/login',
                 element: <Login></Login>,
