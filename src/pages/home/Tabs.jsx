@@ -5,6 +5,7 @@ import Digital from '../../component/digital/Digital';
 import Graphics from '../../component/graphics/Graphics';
 import { useLoaderData } from 'react-router-dom';
 import JobCart from './jobCart/JobCart';
+import backgroundimage from '../../assets/back.jpg'
 
 const TabBase = () => {
 
@@ -18,7 +19,7 @@ const TabBase = () => {
 
 
   return (
-    <div className=' text-center  bg-gray-500'>
+    <div className='text-center h-[1200px]' style={{backgroundSize:'cover',backgroundRepeat:'no repeat',backgroundImage:`url(${backgroundimage})`}}>
      <h2 className='text-3xl font-bold mb-4'> Our category </h2>
       <Tabs>
         <TabList>
@@ -28,7 +29,7 @@ const TabBase = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5 mx-auto p-5 lg:ml-32">
             {filter?.map((cart) => (
               <JobCart cart={cart} key={cart.id}></JobCart>
             ))}

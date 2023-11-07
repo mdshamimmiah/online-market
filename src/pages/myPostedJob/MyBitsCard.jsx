@@ -44,7 +44,9 @@ const MyBitsCard = ({ data }) => {
             </tbody>
         </table>
       </div>
-      <button className="btn btn-secondary mx-auto">Complete Button</button>
+     <div className="items-center text-center mt-10">
+     <button className="btn btn-secondary mx-auto">Complete Button</button>
+     </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ const JobCart = ({cart}) => {
     const { _id,jobTitle, deadline, maximumPrice, description, minimumPrice, image, category} = cart;
     return (
      <div className="">
-   <div className="card w-96 bg-rose-800 shadow-xl">
+   <div className="card w-96 bg-gray-500 shadow-xl">
        
         <div className="card-body h-[500px]">
          <p  className="text-xl font-bold text-lime-400">Job Title : {jobTitle}</p>
