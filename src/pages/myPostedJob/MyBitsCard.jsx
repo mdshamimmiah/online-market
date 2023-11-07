@@ -1,37 +1,52 @@
 
 
-const MyBitsCard = ({item}) => {
-    const {price, deadline, email, email2} = item;
-    console.log(item);
+const MyBitsCard = ({ data }) => {
+  console.log(data);
+  const rowData =data;
 
-    return (
-        <div>
-            <div>
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Price</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      <tr>
-        <th>1</th>
-        <td>{price}</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      row 2
-     
-    </tbody>
-  </table>
-</div>
-        </div>
-    );
+  return (
+    <div>
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+         
+            <tr>
+              <th>job title</th>
+              <th>Price</th>
+              <th>Deadline</th>
+              <th>User Email</th>
+              <th>Bayer Email</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+
+            {
+
+              rowData?.map((row, index) => (<tr  key={index}>
+                <td>{row.jobTitle}</td>
+                <td>{row.price}</td>
+                <td>{row.deadline}</td>
+                <td>{row.email}</td>
+                <td>{row.email2}</td>
+
+              </tr>))
+            }
+            {/* row 1 */}
+            <tr>
+            
+            <td></td>
+            <td></td>
+            <td></td>
+           </tr>
+            </tbody>
+        </table>
+      </div>
+      <button className="btn btn-secondary mx-auto">Complete Button</button>
+    </div>
+  );
 };
 
 export default MyBitsCard;

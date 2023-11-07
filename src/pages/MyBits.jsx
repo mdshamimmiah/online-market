@@ -10,9 +10,7 @@ const MyBits = () => {
   return (
 
     <div>
-      {
-        data?.map((item) => <MyBitsCard key={data._id} item={item}></MyBitsCard> )
-      }
+      <MyBitsCard data={data}></MyBitsCard>
     </div>
   );
 };

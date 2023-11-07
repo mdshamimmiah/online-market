@@ -31,7 +31,7 @@ const handleAddProduct = event => {
     const deadline = form.deadline.value;
     const email = form.email.value;
     const email2 = form.email2.value;
-    const newAddJob = { price, deadline, email, email2 }
+    const newAddJob = { price, deadline, email, email2, jobTitle,status: 'pending' }
     console.log(newAddJob);
 
 
