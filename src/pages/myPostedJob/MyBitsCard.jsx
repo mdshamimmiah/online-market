@@ -44,7 +44,7 @@ const MyBitsCard = ({ data }) => {
                 <td>{row.email}</td>
                 <td>{row.email2}</td>
                 <td>{row.status}</td>
-                <td> <button  onClick={() =>handelConfirm(rowData._id)} className="btn btn-secondary mx-auto">Complete Button</button></td>
+                <td> <button  onClick={() =>handelConfirm(row._id)} className="btn btn-secondary mx-auto">Complete Button</button></td>
 
               </tr>))
             }

@@ -1,77 +1,84 @@
+import React, { useState } from "react";
 import axios from "axios";
 
+const RequestTable = ({ index }) => {
+  const { _id, price, deadline, email, email2, jobTitle, status } = index;
+  const [currentStatus, setCurrentStatus] = useState(status);
+  const [showButtons, setShowButtons] = useState(true);
 
-const RequestTable = ({index}) => {
-    console.log(index);
-
-    const {_id,price, deadline, email, email2, jobTitle,status} = index;
-    console.log(price)
-
-
-    // 
-
-    const handelAkcept = (id) => {
-    const status = { status:"progress" };
+  const handleAccept = (id) => {
+    const status = { status: "progress" };
     axios
       .patch(`http://localhost:5000/bit/${id}`, status)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        setCurrentStatus("progress");
+        setShowButtons(false);
+      })
       .catch((error) => console.log(error));
   };
-    const handelReject = (id) => {
-    const status = { status:"Reject" };
+
+  const handleReject = (id) => {
+    const status = { status: "Reject" };
     axios
       .patch(`http://localhost:5000/bit/${id}`, status)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        setCurrentStatus("Reject");
+        setShowButtons(false);
+      })
       .catch((error) => console.log(error));
   };
-// 
-    return (
-        <div>
-            <div className="">
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-         
-            <tr>
-              <th>job title</th>
-              <th>User Email</th>
-              <th>Deadline</th>
-              <th>Price</th>
-              <th>Status</th>
 
-            </tr>
-          </thead>
-          <tbody>
-
-
-            
-            <tr>
-             
+  return (
+    <div>
+      <div className="">
+        <div className="overflow-x-auto">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>job title</th>
+                <th>User Email</th>
+                <th>Deadline</th>
+                <th>Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td>{jobTitle}</td>
                 <td>{email}</td>
                 <td>{deadline}</td>
                 <td>{price}</td>
-                <td>{status}</td>
-                <td> <button onClick={() =>handelAkcept(_id)} className="btn btn-accent mx-auto">Accept</button></td>
-                <td> <button onClick={() =>handelReject(_id)} className="btn btn-primary mx-auto">Reject</button></td>
-
+                <td>{currentStatus}</td>
+                {showButtons && (
+                  <td>
+                    <button onClick={() => handleAccept(_id)} className="btn btn-accent mx-auto">
+                      Accept
+                    </button>
+                  </td>
+                )}
+                {showButtons && (
+                  <td>
+                    <button onClick={() => handleReject(_id)} className="btn btn-primary mx-auto">
+                      Reject
+                    </button>
+                  </td>
+                )}
+                {!showButtons && (
+                  <td colSpan="2">
+                    {/* Display progress bar or status */}
+                    {currentStatus === "progress" && <div>Progress Bar</div>}
+                    {currentStatus === "Reject" && <div>Rejected</div>}
+                  </td>
+                )}
               </tr>
-            
-            {/* row 1 */}
-            <tr>
-            
-            <td></td>
-            <td></td>
-            <td></td>
-           </tr>
             </tbody>
-        </table>
-      </div>
-    
-    </div>
+          </table>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default RequestTable;
