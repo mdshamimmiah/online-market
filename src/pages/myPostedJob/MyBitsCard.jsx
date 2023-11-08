@@ -1,8 +1,19 @@
 
-
+import axios from "axios";
 const MyBitsCard = ({ data }) => {
   console.log(data);
+
   const rowData =data;
+  // const {_id} = rowData;
+  // req.
+  const handelConfirm = (id) => {
+    const status = { status:"complete" };
+    axios
+      .patch(`http://localhost:5000/bit/${id}`, status)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  };
+  // 
 
   return (
     <div>
@@ -17,6 +28,7 @@ const MyBitsCard = ({ data }) => {
               <th>Deadline</th>
               <th>User Email</th>
               <th>Bayer Email</th>
+              <th>Status</th>
 
             </tr>
           </thead>
@@ -31,7 +43,8 @@ const MyBitsCard = ({ data }) => {
                 <td>{row.deadline}</td>
                 <td>{row.email}</td>
                 <td>{row.email2}</td>
-                <td> <button className="btn btn-secondary mx-auto">Complete Button</button></td>
+                <td>{row.status}</td>
+                <td> <button  onClick={() =>handelConfirm(rowData._id)} className="btn btn-secondary mx-auto">Complete Button</button></td>
 
               </tr>))
             }

@@ -12,6 +12,7 @@ import JobDetails from "../pages/home/jobCart/JobDetails";
 import MyBits from "../pages/MyBits";
 import Update from "../pages/home/jobCart/Update";
 import Request from "../pages/request/Request";
+import PrivateRoute from "../Firebase/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -28,24 +29,24 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addJob',
-                element:<AddJob></AddJob>
+                element:<PrivateRoute><AddJob></AddJob></PrivateRoute>
             },
 
 
             {
                 path: '/myPostedJob',
-                element:<MyPostedJob></MyPostedJob>,
+                element:<PrivateRoute><MyPostedJob></MyPostedJob></PrivateRoute>,
                 loader : () => fetch('http://localhost:5000/online'),
             },
 
             {
                 path:'/myBits',
-                element:<MyBits></MyBits>,
+                element:<PrivateRoute><MyBits></MyBits></PrivateRoute>,
                 loader : () => fetch('http://localhost:5000/bit'),
             },
             {
                 path:'/bitRequest',
-                element: <Request></Request>,
+                element:<PrivateRoute> <Request></Request></PrivateRoute>,
                 loader : () => fetch('http://localhost:5000/bit'),
             },
             
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
             },
             {
                path: '/jobDetails/:id',
-               element: <JobDetails></JobDetails>,
+               element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
                loader: ({ params }) => fetch(`http://localhost:5000/online/${params.id}`)
             },
             {

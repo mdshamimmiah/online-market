@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import flower from '../assets/flower.jpg'
+
 
 import swal from 'sweetalert';
 import { AuthContext } from "./AuthProvider";
@@ -55,10 +55,8 @@ const handleGoogleSign = () =>{
 
 
     return (
-      <div className="hero min-h-screen bg-base-200 flex px-52">
-          <div>
-          <img src={flower} alt="" />
-        </div>
+      <div className="hero min-h-screen bg-base-200 ">
+        
       <div className="hero-content flex-col ">
       
         <div className="text-center ">

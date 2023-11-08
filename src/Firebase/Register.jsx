@@ -53,11 +53,9 @@ const Register = () => {
     
   }
   return (
-    <div className="hero min-h-screen bg-base-200 flex px-60">
-          <div>
-          <img src={flower} alt="" />
-        </div>
-      <div className="hero-content flex-col ">
+    <div className="hero min-h-screen bg-base-200 flex px-60 ">
+         
+      <div className="hero-content flex-col mx-auto ">
         <div className="text-center ">
           <h1 className="text-5xl font-bold">Register now!</h1>
         </div>

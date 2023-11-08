@@ -1,14 +1,33 @@
+import axios from "axios";
 
 
 const RequestTable = ({index}) => {
     console.log(index);
 
-    const {price, deadline, email, email2, jobTitle,status} = index;
+    const {_id,price, deadline, email, email2, jobTitle,status} = index;
     console.log(price)
 
+
+    // 
+
+    const handelAkcept = (id) => {
+    const status = { status:"progress" };
+    axios
+      .patch(`http://localhost:5000/bit/${id}`, status)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  };
+    const handelReject = (id) => {
+    const status = { status:"Reject" };
+    axios
+      .patch(`http://localhost:5000/bit/${id}`, status)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  };
+// 
     return (
         <div>
-            <div>
+            <div className="">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -34,8 +53,8 @@ const RequestTable = ({index}) => {
                 <td>{deadline}</td>
                 <td>{price}</td>
                 <td>{status}</td>
-                <td> <button className="btn btn-accent mx-auto">Accept</button></td>
-                <td> <button className="btn btn-primary mx-auto">Reject</button></td>
+                <td> <button onClick={() =>handelAkcept(_id)} className="btn btn-accent mx-auto">Accept</button></td>
+                <td> <button onClick={() =>handelReject(_id)} className="btn btn-primary mx-auto">Reject</button></td>
 
               </tr>
             

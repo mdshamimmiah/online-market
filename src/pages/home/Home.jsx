@@ -13,9 +13,9 @@ const Home = () => {
     return (
         <div className="mx-auto">
             <Banner1></Banner1>
-            <About></About>
             <Banner2></Banner2>
             <TabBase></TabBase>
+            <About></About>
             <Footer></Footer>
         </div>
     );
