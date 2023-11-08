@@ -64,7 +64,7 @@ const isOwner = user.email === details.email;
     return (
       <div className="mt-8">
         <div className="mb-9">
-        <div className="card w-96 bg-blue-400 shadow-xl mx-auto">
+        <div className="card w-92 bg-blue-400 shadow-xl mx-auto">
         <div className="card-body">
           <h2> Name : {jobTitle}</h2>
           <h2>Deadline : {deadline}</h2>
