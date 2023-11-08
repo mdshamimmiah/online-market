@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import swal from 'sweetalert';
 import { AuthContext } from "./AuthProvider";
+import axios from "axios";
 
 
 const Login = () => {
@@ -17,7 +18,7 @@ const { signInUser, signInWithGoogle } = useContext(AuthContext);
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password)
+   
 
     if(password.length < 6){
       alert('please minimum 6 crearecter')
@@ -25,13 +26,26 @@ const { signInUser, signInWithGoogle } = useContext(AuthContext);
       
     }
     
-
 signInUser(email, password)
 .then(result => {
-  console.log(result.user)
-  swal("Good job!", "You logged successfully", "success")
-  e.target.reset();
-  Navigate(location?.state ?location?.state :"/")
+  const loogedInUser = result.user;
+  console.log(loogedInUser);
+  const user = { email };
+
+ 
+  // Navigate(location?.state ?location?.state :"/")
+  
+
+  // get access token
+axios.post('http://localhost:5000/jwt', user)
+.then(res => {
+  console.log(res.data);
+})
+swal("Good job!", "You logged successfully", "success")
+e.target.reset();
+
+
+  // 
 })
 .catch(error => {
   console.error(error)
