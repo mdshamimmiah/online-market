@@ -48,7 +48,7 @@ const PostFinishCard = ({MyCard, Card, setAddCard}) => {
     }
     return (
         <div>
-        <div className="card w-96 bg-purple-600 shadow-xl mx-auto">
+        <div className="card w-94 bg-purple-600 shadow-xl mx-auto">
             
              <div className="card-body">
               <p>Job Title : {jobTitle}</p>
