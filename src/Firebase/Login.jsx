@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import swal from 'sweetalert';
 import { AuthContext } from "./AuthProvider";
-import axios from "axios";
+// import axios from "axios";
 
 
 const Login = () => {
@@ -26,27 +26,26 @@ const { signInUser, signInWithGoogle } = useContext(AuthContext);
       
     }
     
+// 
 signInUser(email, password)
 .then(result => {
-  const loogedInUser = result.user;
-  console.log(loogedInUser);
-  const user = { email };
+  console.log(result.user)
 
  
-  // Navigate(location?.state ?location?.state :"/")
+  Navigate(location?.state ?location?.state :"/")
   
-
+  swal("Good job!", "You logged successfully", "success")
+  e.target.reset();
+  
   // get access token
-axios.post('http://localhost:5000/jwt', user)
-.then(res => {
-  console.log(res.data);
+// axios.post('http://localhost:5000/jwt', user)
+// .then(res => {
+//   console.log(res.data);
 })
-swal("Good job!", "You logged successfully", "success")
-e.target.reset();
 
 
   // 
-})
+
 .catch(error => {
   console.error(error)
   swal("opps!", "invalid password or email", "error")

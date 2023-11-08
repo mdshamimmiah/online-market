@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import Footer from "../Footer";
 const MyBitsCard = ({ data }) => {
   console.log(data);
 
@@ -17,6 +18,7 @@ const MyBitsCard = ({ data }) => {
 
   return (
     <div>
+      <div>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -59,6 +61,8 @@ const MyBitsCard = ({ data }) => {
         </table>
       </div>
     
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

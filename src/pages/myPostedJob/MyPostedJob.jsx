@@ -2,6 +2,7 @@
 import PostFinishCard from "./postFinishCard";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
+import Footer from "../Footer";
 
 
 
@@ -22,15 +23,19 @@ useEffect(() => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-16  ">
-            
-            {
+       
+       <div>
+         <div className="grid grid-cols-1 md:grid-col lg:grid-cols-3 gap-5 mt-16  ">
+             
+       {
 
 Card && Card?.map(data => <PostFinishCard key={data._id} MyCard={data} Card={Card} setAddCard={setAddCard}></PostFinishCard> )
-}
+            }
+       </div>
             
-           
+           <Footer></Footer>
         </div>
+        
     );
 };
 

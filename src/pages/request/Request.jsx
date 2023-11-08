@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import RequestTable from "./RequestTable";
+import Footer from "../Footer";
 
 
 const Request = () => {
@@ -10,11 +11,15 @@ const Request = () => {
 const filter = data?.filter(p => p.email.includes(''));
 
     return (
-        <div>
+      <div>
+          <div>
             {
                 filter?.map((info) => <RequestTable key={data._id} index={info}></RequestTable>)
             }
         </div>
+
+        <Footer></Footer>
+      </div>
     );
 };
 

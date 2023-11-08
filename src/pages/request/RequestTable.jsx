@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Footer from "../Footer";
 
 const RequestTable = ({ index }) => {
   const { _id, price, deadline, email, email2, jobTitle, status } = index;
@@ -32,6 +33,7 @@ const RequestTable = ({ index }) => {
 
   return (
     <div>
+      <div>
       <div className="">
         <div className="overflow-x-auto">
           <table className="table">
@@ -77,7 +79,11 @@ const RequestTable = ({ index }) => {
           </table>
         </div>
       </div>
+    
     </div>
+   
+    </div>
+    
   );
 };
 

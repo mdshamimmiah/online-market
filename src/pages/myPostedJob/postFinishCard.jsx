@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer';
 
 const PostFinishCard = ({MyCard, Card, setAddCard}) => {
 
@@ -47,6 +48,9 @@ const PostFinishCard = ({MyCard, Card, setAddCard}) => {
         
     }
     return (
+      
+        
+
         <div>
         <div className="card w-94 bg-purple-600 shadow-xl mx-auto">
             
@@ -65,9 +69,10 @@ const PostFinishCard = ({MyCard, Card, setAddCard}) => {
             
                </div>
              </div>
-           </div>
-     
-          </div>
+         </div>
+        
+         </div>
+       
     );
 };
 
