@@ -7,7 +7,7 @@ const JobCart = ({cart}) => {
      <div className="">
    <div className="card w-94 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...shadow-xl">
        
-        <div className="card-body h-[500px]">
+        <div className="card-body h-[502px]">
          <p  className="text-xl font-bold text-lime-400">Job Title : {jobTitle}</p>
         <h2 className="text-xl font-bold text-yellow-400"> Price Range : {maximumPrice} </h2>
         <h3  className="text-xl font-bold text-white">Short Description : {description}</h3>
