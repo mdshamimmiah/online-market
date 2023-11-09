@@ -56,8 +56,12 @@ const PostFinishCard = ({MyCard, Card, setAddCard}) => {
             
              <div className="card-body">
               <p>Job Title : {jobTitle}</p>
-             <h2> Price Range : {maximumPrice} </h2>
-             <h3 className='text-justify'>Short Description : {description}</h3>
+              <p>Deadline : {deadline}</p>
+              <h3 className='text-justify'>Short Description : {description}</h3>
+              <h1 className=''>Category : {category}</h1>
+              <p> Minimum Price : {minimumPrice}</p>
+             <h2> Maximum Price : {maximumPrice} </h2>
+           
                <div className=" flex justify-between">
               
                <button onClick={() => handleDelete(_id)} className="btn btn-outline">Delete</button>
