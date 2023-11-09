@@ -3,6 +3,7 @@ import Footer from "../Footer";
 import About from "./About";
 import Banner1 from "./Banner1";
 import Banner2 from "./Banner2";
+import Bite from "./Bite";
 import TabBase from "./Tabs";
 
 

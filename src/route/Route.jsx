@@ -23,33 +23,33 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader : () => fetch('https://online-market-server.vercel.app/online'),
-             
+                loader: () => fetch('https://online-market-server.vercel.app/online'),
+
 
             },
             {
                 path: '/addJob',
-                element:<PrivateRoute><AddJob></AddJob></PrivateRoute>
+                element: <PrivateRoute><AddJob></AddJob></PrivateRoute>
             },
 
 
             {
                 path: '/myPostedJob',
-                element:<PrivateRoute><MyPostedJob></MyPostedJob></PrivateRoute>,
-                loader : () => fetch('https://online-market-server.vercel.app/online'),
+                element: <PrivateRoute><MyPostedJob></MyPostedJob></PrivateRoute>,
+                loader: () => fetch('https://online-market-server.vercel.app/online'),
             },
 
             {
-                path:'/myBits',
-                element:<PrivateRoute><MyBits></MyBits></PrivateRoute>,
-                loader : () => fetch('https://online-market-server.vercel.app/bit'),
+                path: '/myBits',
+                element: <PrivateRoute><MyBits></MyBits></PrivateRoute>,
+                loader: () => fetch('https://online-market-server.vercel.app/bit'),
             },
             {
-                path:'/bitRequest',
-                element:<PrivateRoute> <Request></Request></PrivateRoute>,
-                loader : () => fetch('https://online-market-server.vercel.app/bit'),
+                path: '/bitRequest',
+                element: <PrivateRoute> <Request></Request></PrivateRoute>,
+                loader: () => fetch('https://online-market-server.vercel.app/bit'),
             },
-            
+
             {
                 path: '/login',
                 element: <Login></Login>,
@@ -61,23 +61,23 @@ const router = createBrowserRouter([
 
             },
 
-         
+
             {
                 path: '/digital',
-                element:<Digital></Digital>
+                element: <Digital></Digital>
             },
             {
                 path: '/graphics',
-                element:<Graphics></Graphics>,
+                element: <Graphics></Graphics>,
             },
             {
-               path: '/jobDetails/:id',
-               element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-               loader: ({ params }) => fetch(`https://online-market-server.vercel.app/online/${params.id}`)
+                path: '/jobDetails/:id',
+                element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://online-market-server.vercel.app/online/${params.id}`)
             },
             {
-                path:'/updateDetails/:id',
-                element:<Update></Update>,
+                path: '/updateDetails/:id',
+                element: <Update></Update>,
                 loader: ({ params }) => fetch(`https://online-market-server.vercel.app/online/${params.id}`),
             },
 
