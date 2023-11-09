@@ -10,7 +10,7 @@ const MyBitsCard = ({ data }) => {
   const handelConfirm = (id) => {
     const status = { status:"complete" };
     axios
-      .patch(`http://localhost:5000/bit/${id}`, status)
+      .patch(`https://online-market-server.vercel.app/bit/${id}`, status)
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
   };
@@ -46,7 +46,7 @@ const MyBitsCard = ({ data }) => {
                 <td>{row.email}</td>
                 <td>{row.email2}</td>
                 <td>{row.status}</td>
-                <td> <button  onClick={() =>handelConfirm(row._id)} className="btn btn-secondary mx-auto">Complete Button</button></td>
+                <td> <button  onClick={() =>handelConfirm(row._id)} className="btn btn-outline mx-auto">Complete</button></td>
 
               </tr>))
             }

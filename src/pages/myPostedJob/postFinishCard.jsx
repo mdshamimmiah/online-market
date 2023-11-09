@@ -24,7 +24,7 @@ const PostFinishCard = ({MyCard, Card, setAddCard}) => {
           }).then((result) => {
             if (result.isConfirmed) {
              
-               fetch(`http://localhost:5000/online/${_id}`, {
+               fetch(`https://online-market-server.vercel.app/online/${_id}`, {
                 method: 'DELETE'
                })
                .then(res => res.json())
@@ -51,19 +51,19 @@ const PostFinishCard = ({MyCard, Card, setAddCard}) => {
       
         
 
-        <div>
-        <div className="card w-94 bg-purple-600 shadow-xl mx-auto">
+        <div className=''>
+        <div className="card w-94 bg-white rounded-none border border-2 border-black mx-auto">
             
              <div className="card-body">
               <p>Job Title : {jobTitle}</p>
              <h2> Price Range : {maximumPrice} </h2>
-             <h3>Short Description : {description}</h3>
+             <h3 className='text-justify'>Short Description : {description}</h3>
                <div className=" flex justify-between">
               
-               <button onClick={() => handleDelete(_id)} className="btn btn-primary">Delete</button>
+               <button onClick={() => handleDelete(_id)} className="btn btn-outline">Delete</button>
 
                <Link to={`/updateDetails/${_id}`}>
-               <button className="btn btn-primary ">Update</button>
+               <button className="btn btn-outline ">Update</button>
                </Link>
               
             

@@ -12,7 +12,7 @@ const MyPostedJob = () => {
 // console.log(data);
 const {user} = useContext(AuthContext);
 const [Card, setAddCard] = useState();
-const url = `http://localhost:5000/online?email=${user.email}`;
+const url = `https://online-market-server.vercel.app/online?email=${user.email}`;
 useEffect(() => {
     fetch(url)
       .then((res) => res.json())

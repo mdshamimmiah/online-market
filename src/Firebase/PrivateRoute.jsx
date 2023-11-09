@@ -34,12 +34,3 @@ PrivateRoute.PropTypes = {
 
 
 
-// signInUser(email, password)
-// .then(result => {
-//   const loogedInUser = result.user:
-//   console.log(loogedInUser);
-//   const user = { email };
-
-// signInUser(email, password)
-// .then(result => {
-//   console.log(result.user)

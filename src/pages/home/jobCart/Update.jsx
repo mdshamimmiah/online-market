@@ -26,7 +26,7 @@ const Update = () => {
 
          // send data to the server
 
-    fetch(`http://localhost:5000/online/${_id}`, {
+    fetch(`https://online-market-server.vercel.app/online/${_id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

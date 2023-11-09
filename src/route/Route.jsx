@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader : () => fetch('http://localhost:5000/online'),
+                loader : () => fetch('https://online-market-server.vercel.app/online'),
              
 
             },
@@ -36,18 +36,18 @@ const router = createBrowserRouter([
             {
                 path: '/myPostedJob',
                 element:<PrivateRoute><MyPostedJob></MyPostedJob></PrivateRoute>,
-                loader : () => fetch('http://localhost:5000/online'),
+                loader : () => fetch('https://online-market-server.vercel.app/online'),
             },
 
             {
                 path:'/myBits',
                 element:<PrivateRoute><MyBits></MyBits></PrivateRoute>,
-                loader : () => fetch('http://localhost:5000/bit'),
+                loader : () => fetch('https://online-market-server.vercel.app/bit'),
             },
             {
                 path:'/bitRequest',
                 element:<PrivateRoute> <Request></Request></PrivateRoute>,
-                loader : () => fetch('http://localhost:5000/bit'),
+                loader : () => fetch('https://online-market-server.vercel.app/bit'),
             },
             
             {
@@ -73,12 +73,12 @@ const router = createBrowserRouter([
             {
                path: '/jobDetails/:id',
                element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-               loader: ({ params }) => fetch(`http://localhost:5000/online/${params.id}`)
+               loader: ({ params }) => fetch(`https://online-market-server.vercel.app/online/${params.id}`)
             },
             {
                 path:'/updateDetails/:id',
                 element:<Update></Update>,
-                loader: ({ params }) => fetch(`http://localhost:5000/online/${params.id}`),
+                loader: ({ params }) => fetch(`https://online-market-server.vercel.app/online/${params.id}`),
             },
 
         ]

@@ -34,7 +34,7 @@ const AddJob = () => {
 
         // send data to the server
 
-        fetch('http://localhost:5000/online', {
+        fetch('https://online-market-server.vercel.app/online', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

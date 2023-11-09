@@ -10,7 +10,7 @@ const RequestTable = ({ index }) => {
   const handleAccept = (id) => {
     const status = { status: "progress" };
     axios
-      .patch(`http://localhost:5000/bit/${id}`, status)
+      .patch(`https://online-market-server.vercel.app/bit/${id}`, status)
       .then((response) => {
         console.log(response);
         setCurrentStatus("progress");
@@ -22,7 +22,7 @@ const RequestTable = ({ index }) => {
   const handleReject = (id) => {
     const status = { status: "Reject" };
     axios
-      .patch(`http://localhost:5000/bit/${id}`, status)
+      .patch(`https://online-market-server.vercel.app/bit/${id}`, status)
       .then((response) => {
         console.log(response);
         setCurrentStatus("Reject");

@@ -36,7 +36,7 @@ const handleAddProduct = event => {
 
 
     // sent data server
-    fetch('http://localhost:5000/bit', {
+    fetch('https://online-market-server.vercel.app/bit', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

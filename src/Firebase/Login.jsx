@@ -38,7 +38,7 @@ signInUser(email, password)
   e.target.reset();
   
   // get access token
-// axios.post('http://localhost:5000/jwt', user)
+// axios.post('https://online-market-server.vercel.app/jwt', user)
 // .then(res => {
 //   console.log(res.data);
 })

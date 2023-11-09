@@ -19,7 +19,7 @@ const TabBase = () => {
 
 
   return (
-    <div className='text-center h-[1200px]' style={{backgroundSize:'cover',backgroundRepeat:'no repeat',backgroundImage:`url(${backgroundimage})`}}>
+    <div className='text-center h-[900px]' style={{backgroundSize:'cover',backgroundRepeat:'no repeat',backgroundImage:`url(${backgroundimage})`}}>
      <h2 className='text-3xl font-bold mb-4'> Our category </h2>
       <Tabs>
         <TabList>
